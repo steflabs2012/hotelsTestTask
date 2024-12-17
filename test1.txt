@@ -1,0 +1,1044 @@
+array(1) {
+  [0]=>
+  array(6) {
+    ["$id"]=>
+    string(1) "1"
+    ["Voucher"]=>
+    string(4) "3109"
+    ["BeginDate"]=>
+    string(19) "2024-10-25T00:00:00"
+    ["EndDate"]=>
+    string(19) "2024-11-02T00:00:00"
+    ["RecId"]=>
+    int(199298)
+    ["ReservationDetails"]=>
+    array(2) {
+      [0]=>
+      array(29) {
+        ["$id"]=>
+        string(1) "2"
+        ["HotelId"]=>
+        int(1791)
+        ["OperatorId"]=>
+        int(2527)
+        ["CheckinDate"]=>
+        string(19) "2024-10-27T00:00:00"
+        ["CheckOutDate"]=>
+        string(19) "2024-11-02T00:00:00"
+        ["RoomTypeId"]=>
+        int(363)
+        ["BoardId"]=>
+        int(11)
+        ["Adult"]=>
+        int(6)
+        ["Child"]=>
+        int(1)
+        ["IsBabyFree"]=>
+        bool(false)
+        ["IsReservationChanged"]=>
+        bool(false)
+        ["ConfirmStatus"]=>
+        string(1) "1"
+        ["Customer"]=>
+        array(7) {
+          [0]=>
+          array(16) {
+            ["$id"]=>
+            string(1) "3"
+            ["Title"]=>
+            string(2) "Mr"
+            ["FirstName"]=>
+            string(5) "RAFIK"
+            ["LastName"]=>
+            string(11) "ZAGRUDINOV "
+            ["BirthDate"]=>
+            string(19) "1975-05-12T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["DepartureFlightNumber"]=>
+            string(7) "SU 2147"
+            ["Age"]=>
+            int(49)
+            ["ArrivalTransferTypeId"]=>
+            int(7)
+            ["DepartureTransferTypeId"]=>
+            int(25)
+            ["IsArrivalTransfer"]=>
+            bool(false)
+            ["IsDepartureTransfer"]=>
+            bool(true)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-11-02T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443397)
+          }
+          [1]=>
+          array(16) {
+            ["$id"]=>
+            string(1) "4"
+            ["Title"]=>
+            string(3) "Mrs"
+            ["FirstName"]=>
+            string(6) "VENERA"
+            ["LastName"]=>
+            string(13) "ZAGRUTDINOVA "
+            ["BirthDate"]=>
+            string(19) "1976-03-01T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["DepartureFlightNumber"]=>
+            string(7) "SU 2147"
+            ["Age"]=>
+            int(48)
+            ["ArrivalTransferTypeId"]=>
+            int(7)
+            ["DepartureTransferTypeId"]=>
+            int(25)
+            ["IsArrivalTransfer"]=>
+            bool(false)
+            ["IsDepartureTransfer"]=>
+            bool(true)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-11-02T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443398)
+          }
+          [2]=>
+          array(16) {
+            ["$id"]=>
+            string(1) "5"
+            ["Title"]=>
+            string(2) "Mr"
+            ["FirstName"]=>
+            string(8) "NURISLAM"
+            ["LastName"]=>
+            string(12) "ZAGRUTDINOV "
+            ["BirthDate"]=>
+            string(19) "2009-11-29T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["DepartureFlightNumber"]=>
+            string(7) "SU 2147"
+            ["Age"]=>
+            int(14)
+            ["ArrivalTransferTypeId"]=>
+            int(7)
+            ["DepartureTransferTypeId"]=>
+            int(25)
+            ["IsArrivalTransfer"]=>
+            bool(false)
+            ["IsDepartureTransfer"]=>
+            bool(true)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-11-02T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443399)
+          }
+          [3]=>
+          array(16) {
+            ["$id"]=>
+            string(1) "6"
+            ["Title"]=>
+            string(3) "Chd"
+            ["FirstName"]=>
+            string(6) "MARIAM"
+            ["LastName"]=>
+            string(13) "ZAGRUTDINOVA "
+            ["BirthDate"]=>
+            string(19) "2020-08-07T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["DepartureFlightNumber"]=>
+            string(7) "SU 2147"
+            ["Age"]=>
+            int(4)
+            ["ArrivalTransferTypeId"]=>
+            int(7)
+            ["DepartureTransferTypeId"]=>
+            int(25)
+            ["IsArrivalTransfer"]=>
+            bool(false)
+            ["IsDepartureTransfer"]=>
+            bool(true)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-11-02T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443400)
+          }
+          [4]=>
+          array(17) {
+            ["$id"]=>
+            string(1) "7"
+            ["Title"]=>
+            string(2) "Mr"
+            ["FirstName"]=>
+            string(5) "MURAD"
+            ["LastName"]=>
+            string(12) "ZAGRUTDINOV "
+            ["BirthDate"]=>
+            string(19) "1999-10-20T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["ArrivalFlightNumber"]=>
+            string(6) "TK 212"
+            ["DepartureFlightNumber"]=>
+            string(7) "SU 2147"
+            ["Age"]=>
+            int(25)
+            ["ArrivalTransferTypeId"]=>
+            int(7)
+            ["DepartureTransferTypeId"]=>
+            int(25)
+            ["IsArrivalTransfer"]=>
+            bool(true)
+            ["IsDepartureTransfer"]=>
+            bool(true)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-11-02T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443401)
+          }
+          [5]=>
+          array(17) {
+            ["$id"]=>
+            string(1) "8"
+            ["Title"]=>
+            string(3) "Mrs"
+            ["FirstName"]=>
+            string(6) "MALIKA"
+            ["LastName"]=>
+            string(12) "AGRUTDINOVA "
+            ["BirthDate"]=>
+            string(19) "2004-02-20T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["ArrivalFlightNumber"]=>
+            string(6) "TK 212"
+            ["DepartureFlightNumber"]=>
+            string(7) "SU 2147"
+            ["Age"]=>
+            int(20)
+            ["ArrivalTransferTypeId"]=>
+            int(7)
+            ["DepartureTransferTypeId"]=>
+            int(25)
+            ["IsArrivalTransfer"]=>
+            bool(true)
+            ["IsDepartureTransfer"]=>
+            bool(true)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-11-02T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443402)
+          }
+          [6]=>
+          array(17) {
+            ["$id"]=>
+            string(1) "9"
+            ["Title"]=>
+            string(2) "Mr"
+            ["FirstName"]=>
+            string(5) "KAMIL"
+            ["LastName"]=>
+            string(12) "GILEMKHANOV "
+            ["BirthDate"]=>
+            string(19) "2003-10-25T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["ArrivalFlightNumber"]=>
+            string(6) "TK 212"
+            ["DepartureFlightNumber"]=>
+            string(7) "SU 2147"
+            ["Age"]=>
+            int(21)
+            ["ArrivalTransferTypeId"]=>
+            int(7)
+            ["DepartureTransferTypeId"]=>
+            int(25)
+            ["IsArrivalTransfer"]=>
+            bool(true)
+            ["IsDepartureTransfer"]=>
+            bool(true)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-11-02T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443403)
+          }
+        }
+        ["DailyDetail"]=>
+        array(17) {
+          [0]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "10"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(0)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(3500)
+            ["StayDay"]=>
+            int(1)
+            ["StayDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["RecId"]=>
+            int(5252596)
+          }
+          [1]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "11"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(323275)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-875)
+            ["StayDay"]=>
+            int(1)
+            ["StayDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["RecId"]=>
+            int(5252602)
+          }
+          [2]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "12"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(318208)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-55.125)
+            ["StayDay"]=>
+            int(1)
+            ["StayDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["RecId"]=>
+            int(5252608)
+          }
+          [3]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "13"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(0)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(3500)
+            ["StayDay"]=>
+            int(2)
+            ["StayDate"]=>
+            string(19) "2024-10-28T00:00:00"
+            ["RecId"]=>
+            int(5252597)
+          }
+          [4]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "14"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(323275)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-875)
+            ["StayDay"]=>
+            int(2)
+            ["StayDate"]=>
+            string(19) "2024-10-28T00:00:00"
+            ["RecId"]=>
+            int(5252603)
+          }
+          [5]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "15"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(318208)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-55.125)
+            ["StayDay"]=>
+            int(2)
+            ["StayDate"]=>
+            string(19) "2024-10-28T00:00:00"
+            ["RecId"]=>
+            int(5252609)
+          }
+          [6]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "16"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(0)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(3500)
+            ["StayDay"]=>
+            int(3)
+            ["StayDate"]=>
+            string(19) "2024-10-29T00:00:00"
+            ["RecId"]=>
+            int(5252598)
+          }
+          [7]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "17"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(323275)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-875)
+            ["StayDay"]=>
+            int(3)
+            ["StayDate"]=>
+            string(19) "2024-10-29T00:00:00"
+            ["RecId"]=>
+            int(5252604)
+          }
+          [8]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "18"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(318208)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-55.125)
+            ["StayDay"]=>
+            int(3)
+            ["StayDate"]=>
+            string(19) "2024-10-29T00:00:00"
+            ["RecId"]=>
+            int(5252610)
+          }
+          [9]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "19"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(0)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(3500)
+            ["StayDay"]=>
+            int(4)
+            ["StayDate"]=>
+            string(19) "2024-10-30T00:00:00"
+            ["RecId"]=>
+            int(5252599)
+          }
+          [10]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "20"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(323275)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-875)
+            ["StayDay"]=>
+            int(4)
+            ["StayDate"]=>
+            string(19) "2024-10-30T00:00:00"
+            ["RecId"]=>
+            int(5252605)
+          }
+          [11]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "21"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(318208)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-55.125)
+            ["StayDay"]=>
+            int(4)
+            ["StayDate"]=>
+            string(19) "2024-10-30T00:00:00"
+            ["RecId"]=>
+            int(5252611)
+          }
+          [12]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "22"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(0)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(3500)
+            ["StayDay"]=>
+            int(5)
+            ["StayDate"]=>
+            string(19) "2024-10-31T00:00:00"
+            ["RecId"]=>
+            int(5252600)
+          }
+          [13]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "23"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(323275)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-875)
+            ["StayDay"]=>
+            int(5)
+            ["StayDate"]=>
+            string(19) "2024-10-31T00:00:00"
+            ["RecId"]=>
+            int(5252606)
+          }
+          [14]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "24"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(318208)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-55.125)
+            ["StayDay"]=>
+            int(5)
+            ["StayDate"]=>
+            string(19) "2024-10-31T00:00:00"
+            ["RecId"]=>
+            int(5252612)
+          }
+          [15]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "25"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(0)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(3500)
+            ["StayDay"]=>
+            int(6)
+            ["StayDate"]=>
+            string(19) "2024-11-01T00:00:00"
+            ["RecId"]=>
+            int(5252601)
+          }
+          [16]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "26"
+            ["ReservationDetailId"]=>
+            int(245297)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(323275)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-875)
+            ["StayDay"]=>
+            int(6)
+            ["StayDate"]=>
+            string(19) "2024-11-01T00:00:00"
+            ["RecId"]=>
+            int(5252607)
+          }
+        }
+        ["HotelRoomCode"]=>
+        string(4) "VILP"
+        ["TransferRemark"]=>
+        string(17) "ISIMLI KARŞILAMA"
+        ["BuySaleDate"]=>
+        string(19) "2024-10-04T00:00:00"
+        ["ArrivalTransfer"]=>
+        int(0)
+        ["DepartureTransfer"]=>
+        int(0)
+        ["Amount"]=>
+        float(15474.375)
+        ["RecId"]=>
+        int(245297)
+        ["ReservationType"]=>
+        string(13) "Not Cancelled"
+        ["RecordDate"]=>
+        string(21) "2024-10-02T19:19:13.7"
+        ["SaleDate"]=>
+        string(23) "2024-10-02T19:16:55.047"
+        ["Code3"]=>
+        string(10) "OZEL TALEP"
+        ["HotelName"]=>
+        string(38) "CLUB PRIVE BY RIXOS BELEK (on request)"
+        ["GroupId"]=>
+        int(0)
+        ["ProformaDate"]=>
+        string(19) "0001-01-01T00:00:00"
+        ["AdditionalServices"]=>
+        array(3) {
+          [0]=>
+          array(6) {
+            ["$id"]=>
+            string(2) "27"
+            ["Id"]=>
+            int(0)
+            ["Currency"]=>
+            string(3) "EUR"
+            ["Price"]=>
+            float(15474.375)
+            ["ServiceName"]=>
+            string(13) "Accommodation"
+            ["ServiceDate"]=>
+            string(19) "2024-10-27T00:00:00"
+          }
+          [1]=>
+          array(6) {
+            ["$id"]=>
+            string(2) "28"
+            ["Id"]=>
+            int(0)
+            ["Currency"]=>
+            string(3) "EUR"
+            ["Price"]=>
+            float(90)
+            ["ServiceName"]=>
+            string(8) "Transfer"
+            ["ServiceDate"]=>
+            string(19) "2024-10-27T00:00:00"
+          }
+          [2]=>
+          array(6) {
+            ["$id"]=>
+            string(2) "29"
+            ["Id"]=>
+            int(0)
+            ["Currency"]=>
+            string(3) "EUR"
+            ["Price"]=>
+            float(-291.38)
+            ["ServiceName"]=>
+            string(5) "Other"
+            ["ServiceDate"]=>
+            string(19) "2024-10-27T00:00:00"
+          }
+        }
+      }
+      [1]=>
+      array(28) {
+        ["$id"]=>
+        string(2) "30"
+        ["HotelId"]=>
+        int(1791)
+        ["OperatorId"]=>
+        int(2527)
+        ["CheckinDate"]=>
+        string(19) "2024-10-25T00:00:00"
+        ["CheckOutDate"]=>
+        string(19) "2024-10-27T00:00:00"
+        ["RoomTypeId"]=>
+        int(363)
+        ["BoardId"]=>
+        int(11)
+        ["Adult"]=>
+        int(3)
+        ["Child"]=>
+        int(1)
+        ["IsBabyFree"]=>
+        bool(false)
+        ["IsReservationChanged"]=>
+        bool(false)
+        ["ConfirmStatus"]=>
+        string(1) "1"
+        ["Customer"]=>
+        array(4) {
+          [0]=>
+          array(17) {
+            ["$id"]=>
+            string(2) "31"
+            ["Title"]=>
+            string(2) "Mr"
+            ["FirstName"]=>
+            string(5) "RAFIK"
+            ["LastName"]=>
+            string(11) "ZAGRUDINOV "
+            ["BirthDate"]=>
+            string(19) "1975-05-12T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["ArrivalFlightNumber"]=>
+            string(7) "SU 2124"
+            ["DepartureFlightNumber"]=>
+            string(5) "AYT-?"
+            ["Age"]=>
+            int(49)
+            ["ArrivalTransferTypeId"]=>
+            int(25)
+            ["DepartureTransferTypeId"]=>
+            int(7)
+            ["IsArrivalTransfer"]=>
+            bool(true)
+            ["IsDepartureTransfer"]=>
+            bool(false)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-25T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443393)
+          }
+          [1]=>
+          array(17) {
+            ["$id"]=>
+            string(2) "32"
+            ["Title"]=>
+            string(3) "Mrs"
+            ["FirstName"]=>
+            string(6) "VENERA"
+            ["LastName"]=>
+            string(13) "ZAGRUTDINOVA "
+            ["BirthDate"]=>
+            string(19) "1976-03-01T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["ArrivalFlightNumber"]=>
+            string(7) "SU 2124"
+            ["DepartureFlightNumber"]=>
+            string(5) "AYT-?"
+            ["Age"]=>
+            int(48)
+            ["ArrivalTransferTypeId"]=>
+            int(25)
+            ["DepartureTransferTypeId"]=>
+            int(7)
+            ["IsArrivalTransfer"]=>
+            bool(true)
+            ["IsDepartureTransfer"]=>
+            bool(false)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-25T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443394)
+          }
+          [2]=>
+          array(17) {
+            ["$id"]=>
+            string(2) "33"
+            ["Title"]=>
+            string(2) "Mr"
+            ["FirstName"]=>
+            string(8) "NURISLAM"
+            ["LastName"]=>
+            string(12) "ZAGRUTDINOV "
+            ["BirthDate"]=>
+            string(19) "2009-11-29T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["ArrivalFlightNumber"]=>
+            string(7) "SU 2124"
+            ["DepartureFlightNumber"]=>
+            string(5) "AYT-?"
+            ["Age"]=>
+            int(14)
+            ["ArrivalTransferTypeId"]=>
+            int(25)
+            ["DepartureTransferTypeId"]=>
+            int(7)
+            ["IsArrivalTransfer"]=>
+            bool(true)
+            ["IsDepartureTransfer"]=>
+            bool(false)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-25T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443395)
+          }
+          [3]=>
+          array(17) {
+            ["$id"]=>
+            string(2) "34"
+            ["Title"]=>
+            string(3) "Chd"
+            ["FirstName"]=>
+            string(6) "MARIAM"
+            ["LastName"]=>
+            string(13) "ZAGRUTDINOVA "
+            ["BirthDate"]=>
+            string(19) "2020-08-07T00:00:00"
+            ["PassNo"]=>
+            string(0) ""
+            ["PassSerial"]=>
+            string(0) ""
+            ["ArrivalFlightNumber"]=>
+            string(7) "SU 2124"
+            ["DepartureFlightNumber"]=>
+            string(5) "AYT-?"
+            ["Age"]=>
+            int(4)
+            ["ArrivalTransferTypeId"]=>
+            int(25)
+            ["DepartureTransferTypeId"]=>
+            int(7)
+            ["IsArrivalTransfer"]=>
+            bool(true)
+            ["IsDepartureTransfer"]=>
+            bool(false)
+            ["ArrivalTransferDate"]=>
+            string(19) "2024-10-25T00:00:00"
+            ["DepartureTransferDate"]=>
+            string(19) "2024-10-27T00:00:00"
+            ["ReservationCustomerId"]=>
+            int(443396)
+          }
+        }
+        ["DailyDetail"]=>
+        array(4) {
+          [0]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "35"
+            ["ReservationDetailId"]=>
+            int(245298)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(0)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(3250)
+            ["StayDay"]=>
+            int(1)
+            ["StayDate"]=>
+            string(19) "2024-10-25T00:00:00"
+            ["RecId"]=>
+            int(5252617)
+          }
+          [1]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "36"
+            ["ReservationDetailId"]=>
+            int(245298)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(323275)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-812.5)
+            ["StayDay"]=>
+            int(1)
+            ["StayDate"]=>
+            string(19) "2024-10-25T00:00:00"
+            ["RecId"]=>
+            int(5252619)
+          }
+          [2]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "37"
+            ["ReservationDetailId"]=>
+            int(245298)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(0)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(3250)
+            ["StayDay"]=>
+            int(2)
+            ["StayDate"]=>
+            string(19) "2024-10-26T00:00:00"
+            ["RecId"]=>
+            int(5252618)
+          }
+          [3]=>
+          array(9) {
+            ["$id"]=>
+            string(2) "38"
+            ["ReservationDetailId"]=>
+            int(245298)
+            ["CurrencyId"]=>
+            int(44)
+            ["PacketId"]=>
+            int(323275)
+            ["ContractId"]=>
+            int(22484)
+            ["Amount"]=>
+            float(-812.5)
+            ["StayDay"]=>
+            int(2)
+            ["StayDate"]=>
+            string(19) "2024-10-26T00:00:00"
+            ["RecId"]=>
+            int(5252620)
+          }
+        }
+        ["HotelRoomCode"]=>
+        string(4) "VILP"
+        ["BuySaleDate"]=>
+        string(19) "2024-10-04T00:00:00"
+        ["ArrivalTransfer"]=>
+        int(0)
+        ["DepartureTransfer"]=>
+        int(0)
+        ["Amount"]=>
+        float(4875)
+        ["RecId"]=>
+        int(245298)
+        ["ReservationType"]=>
+        string(13) "Not Cancelled"
+        ["RecordDate"]=>
+        string(23) "2024-10-02T19:19:13.607"
+        ["SaleDate"]=>
+        string(22) "2024-10-02T19:12:25.37"
+        ["Code3"]=>
+        string(10) "OZEL TALEP"
+        ["HotelName"]=>
+        string(38) "CLUB PRIVE BY RIXOS BELEK (on request)"
+        ["GroupId"]=>
+        int(0)
+        ["ProformaDate"]=>
+        string(19) "0001-01-01T00:00:00"
+        ["AdditionalServices"]=>
+        array(1) {
+          [0]=>
+          array(6) {
+            ["$id"]=>
+            string(2) "39"
+            ["Id"]=>
+            int(0)
+            ["Currency"]=>
+            string(3) "EUR"
+            ["Price"]=>
+            float(4875)
+            ["ServiceName"]=>
+            string(13) "Accommodation"
+            ["ServiceDate"]=>
+            string(19) "2024-10-25T00:00:00"
+          }
+        }
+      }
+    }
+  }
+}

@@ -180,7 +180,7 @@ class Room extends Model
 
             // Группируем по board_id
             $groupedByBoard = [];
-            $daysInPeriod = $currentFrom->diffInDays($currentTo);
+            $daysInPeriod = $currentFrom->diffInDays($currentTo) + 1;
 
             foreach ($periodsInRange as $period) {
                 $boardId = $period['board_id'];

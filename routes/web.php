@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,10 @@ if (App::environment('local')) {
     Route::get('/regions', 'DebugController@regions')->name('regions');
     Route::get('/mainregions', 'DebugController@mainregions')->name('mainregions');
     Route::get('/subregions', 'DebugController@subregions')->name('subregions');
+    Route::get('/currency', 'DebugController@currencyList')->name('currency');
+    Route::get('/pricesearch', 'DebugController@priceSearch')->name('pricesearch');
+    Route::get('/contracts', 'DebugController@getContracts')->name('contracts');
+    Route::get('/packets', 'DebugController@getPackets')->name('packets');
 }
 
 

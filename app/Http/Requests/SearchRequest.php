@@ -14,7 +14,8 @@ class SearchRequest extends FormRequest
             'hotel_id'       => 'nullable|integer',
             'region_id'      => 'nullable|integer',
             'main_region_id' => 'nullable|integer',
-            'adults'         => 'nullable|integer|min:1',
+            'adults'         => 'nullable|integer|min:1|max:10',
+            'childrens'      => 'nullable|integer|min:0|max:4',
         ];
     }
 

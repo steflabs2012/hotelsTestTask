@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\DTO\ReservationParams;
+use App\DTO\SearchFilterParams;
+use App\Models\Room;
 use App\Services\ApiClient as Api;
 
 use Carbon\Carbon;
@@ -23,6 +25,28 @@ class RoomAvailabilityService
     }
 
     /**
+     * @throws Exception
+     */
+    public function getSearchData(SearchFilterParams $searchFilter): Collection
+    {
+        $rooms = Room::getByFilterParams($searchFilter, [
+            'hotel',
+            'hotel.region',
+            'hotel.regionsMain',
+            'roomType',
+            'boards'
+        ]);
+
+        $avalableRooms = $this->filterAvailableRooms($rooms, $searchFilter->from, $searchFilter->to, $searchFilter->hotelId);
+
+        foreach ($avalableRooms as $room) {
+            $room->preparedPeriods = $room->preparePricingPeriod($searchFilter->from, $searchFilter->to);
+        }
+
+        return $rooms;
+    }
+
+    /**
      * @param Collection $rooms
      * @param string     $from
      * @param string     $to
@@ -31,7 +55,7 @@ class RoomAvailabilityService
      * @return Collection
      * @throws Exception
      */
-    public function filterAvailableRooms(Collection $rooms, string $from, string $to, ?int $hotel_id = null): Collection
+    protected function filterAvailableRooms(Collection $rooms, string $from, string $to, ?int $hotel_id = null): Collection
     {
         $this->apiClient->login();
 
@@ -47,14 +71,22 @@ class RoomAvailabilityService
         return $avalableRooms;
     }
 
+    /**
+     * @param string   $from
+     * @param string   $to
+     * @param int|null $hotel_id
+     *
+     * @return array
+     * @throws Exception
+     */
     protected function getReservedRoomsByHotelsIds(string $from, string $to, ?int $hotel_id = null): array
     {
         $reservionParams = new ReservationParams([
-            'from'        => $from,
-            'to_creation' => $to,
+//            'from'        => $from,
             'hotel_id'    => $hotel_id,
         ]);
 
+        //todo to cache by hotel id key
         $reservations = $this->apiClient->getReservations($reservionParams);
 
         $reservedRoomIdsByHotel = $this->extractReservedRoomIdsByHotel($reservations, $from, $to);

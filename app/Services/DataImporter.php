@@ -3,12 +3,14 @@
 namespace App\Services;
 
 use App\Models\Hotel;
+use App\Models\PricingPeriod;
 use App\Models\Region;
 use App\Models\RegionsMain;
 use App\Models\RegionsSub;
 use App\Models\RoomType;
 use App\Models\Room;
 use App\Models\Board;
+use Carbon\Carbon;
 use Exception;
 
 
@@ -22,7 +24,6 @@ class DataImporter
     public function __construct(ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
-        $this->apiClient->login();
     }
 
     /**
@@ -30,6 +31,8 @@ class DataImporter
      */
     public function importHotels(): void
     {
+        $this->apiClient->login();
+
         $hotelsData = $this->apiClient->getActiveHotels();
 
         foreach ($hotelsData as $hotelData) {
@@ -51,11 +54,15 @@ class DataImporter
         }
     }
 
+
     /**
+     * @return void
      * @throws Exception
      */
     public function importRegions(): void
     {
+        $this->apiClient->login();
+
         $regionsData = $this->apiClient->getRegions();
 
         foreach ($regionsData as $regionData) {
@@ -73,6 +80,62 @@ class DataImporter
     }
 
     /**
+     * @return void
+     * @throws Exception
+     */
+    public function importPricingPeriods(): void
+    {
+        $this->apiClient->login();
+
+        $hotelIds = Hotel::pluck('id')->toArray();
+
+        foreach ($hotelIds as $hotelId) {
+
+            $contractsData = $this->apiClient->getContracts([
+                "HotelId"  => $hotelId,
+                "IsActive" => true,
+            ]);
+
+            print_r($hotelId . " importded\n");
+
+            $this->importHotelPricingPeriod($contractsData);
+        }
+    }
+
+    /**
+     * @param array $contractsData
+     *
+     * @return void
+     */
+    protected function importHotelPricingPeriod(array $contractsData): void
+    {
+        foreach ($contractsData as $contract) {
+            $currency = $this->getCurrencyCode($contract['CurrencyId']);
+            $boardId = $contract['Boards'][0] ?? null;
+
+            foreach ($contract['Accommodations'] as $accommodation) {
+                PricingPeriod::query()->firstOrCreate(
+                    [
+                        'hotel_id'     => $contract['HotelId'],
+                        'room_type_id' => $accommodation['RoomTypeId'],
+                        'board_id'     => $boardId,
+                        'from'         => Carbon::parse($accommodation['PeriodBegin'])->toDateString(),
+                        'to'           => Carbon::parse($accommodation['PeriodEnd'])->toDateString(),
+                        'adults'       => $accommodation['Adult'],
+                        'children'     => $accommodation['Child'],
+                    ],
+                    [
+                        'price'    => $accommodation['Price'],
+                        'currency' => $currency,
+                    ]
+                );
+            }
+        }
+    }
+
+
+    /**
+     * @return void
      * @throws Exception
      */
     public function importRegionsMain(): void
@@ -92,7 +155,9 @@ class DataImporter
         }
     }
 
+
     /**
+     * @return void
      * @throws Exception
      */
     public function importRegionsSub(): void
@@ -124,15 +189,12 @@ class DataImporter
             $roomType = RoomType::query()->firstOrCreate(
                 ['id' => $roomTypeData['Id']],
                 [
-                    'id'             => $roomTypeData['Id'],
-                    'code'           => $roomTypeData['Code'] ?? '',
-                    'remark'         => $roomTypeData['Remark'] ?? '',
-                    'quota'          => $roomTypeData['Quota'] ?? 0,
-                    'on_request'     => $roomTypeData['OnRequest'] ?? 0,
-                    'min_paid_adult' => $roomTypeData['MinPaidAdult'] ?? 0,
-                    'max_adult'      => $roomTypeData['MaxAdult'] ?? 0,
-                    'max_child_age'  => $roomTypeData['MaxChildAge'] ?? 0,
-                    'description'    => $roomTypeData['Description'] ?? '',
+                    'id'          => $roomTypeData['Id'],
+                    'code'        => $roomTypeData['Code'] ?? '',
+                    'remark'      => $roomTypeData['Remark'] ?? '',
+                    'quota'       => $roomTypeData['Quota'] ?? 0,
+                    'on_request'  => $roomTypeData['OnRequest'] ?? 0,
+                    'description' => $roomTypeData['Description'] ?? '',
                 ]
             );
 
@@ -142,8 +204,11 @@ class DataImporter
                     'room_type_id' => $roomType->id,
                 ],
                 [
-                    'hotel_id'     => $hotel->id,
-                    'room_type_id' => $roomType->id,
+                    'hotel_id'       => $hotel->id,
+                    'room_type_id'   => $roomType->id,
+                    'min_paid_adult' => $roomTypeData['MinPaidAdult'] ?? 0,
+                    'max_adult'      => $roomTypeData['MaxAdult'] ?? 0,
+                    'max_child_age'  => $roomTypeData['MaxChildAge'] ?? 0,
                 ]
             );
 
@@ -172,5 +237,22 @@ class DataImporter
 
             $room->boards()->syncWithoutDetaching([$board->id]);
         }
+    }
+
+    /**
+     * @param int $currencyId
+     *
+     * @return string
+     */
+    protected function getCurrencyCode(int $currencyId): string
+    {
+        $currencies = [
+            43 => 'TL',
+            45 => 'USD',
+            44 => 'EUR',
+            46 => 'RUB',
+        ];
+
+        return $currencies[$currencyId] ?? 'UNKNOWN';
     }
 }

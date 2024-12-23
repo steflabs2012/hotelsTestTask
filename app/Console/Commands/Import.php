@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Dflydev\DotAccessData\Data;
+use Exception;
 use Illuminate\Console\Command;
 use App\Services\ApiClient;
 use App\Services\DataImporter;
@@ -21,14 +22,14 @@ class Import extends Command
      *
      * @var string
      */
-    protected $description = 'Import data from the API (hotels or regions)';
+    protected $description = 'Import data from the API (hotels or regions or price)';
 
     /**
      * Execute the console command.
-     *
      * @return int
+     * @throws Exception
      */
-    public function handle(ApiClient $apiClient)
+    public function handle(ApiClient $apiClient): int
     {
         $importer = new DataImporter($apiClient);
 
@@ -50,9 +51,13 @@ class Import extends Command
                 $importer->importRegionsSub();
                 $this->info('Sub Regions imported successfully.');
                 break;
+            case 'price':
+                $importer->importPricingPeriods();
+                $this->info('Prices imported successfully.');
+                break;
 
             default:
-                $this->error('Invalid type. Please use "hotels" or "regions".');
+                $this->error('Invalid type. Please use "hotels" or "regions" or "price".');
                 return Command::FAILURE;
         }
 

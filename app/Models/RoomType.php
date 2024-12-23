@@ -22,9 +22,6 @@ class RoomType extends Model
         'remark',
         'quota',
         'on_request',
-        'min_paid_adult',
-        'max_adult',
-        'max_child_age',
         'description',
     ];
 

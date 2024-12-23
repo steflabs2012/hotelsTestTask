@@ -15,7 +15,7 @@ class ClearTables extends Command
 
     public function handle()
     {
-        $tables = ['hotels', 'rooms', 'room_board', 'room_types', 'regions', 'regions_main', 'regions_sub'];
+        $tables = ['hotels', 'rooms', 'room_board', 'room_types', 'regions', 'regions_main', 'regions_sub', 'pricing_periods'];
 
         foreach ($tables as $table) {
             DB::table($table)->truncate();

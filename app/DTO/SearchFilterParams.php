@@ -4,10 +4,15 @@ namespace App\DTO;
 
 class SearchFilterParams
 {
-    public ?int $hotelId  = null;
-    public ?int $adults   = null;
-    public ?int $cityId   = null;
-    public ?int $regionId = null;
+    public ?int $hotelId   = null;
+    public ?int $adults    = null;
+    public ?int $childrens = null;
+    public ?int $cityId    = null;
+    public ?int $regionId  = null;
+
+    public string $from;
+
+    public string $to;
 
     /**
      * @param array $params
@@ -16,8 +21,11 @@ class SearchFilterParams
     {
         $this->hotelId = $params['hotel_id'] ?? null;
         $this->adults = $params['adults'] ?? null;
+        $this->childrens = $params['childrens'] ?? null;
         $this->cityId = $params['main_region_id'] ?? null;
         $this->regionId = $params['region_id'] ?? null;
+        $this->from = $params['from'] ?? null;
+        $this->to = $params['to'] ?? null;
     }
 
     /**
@@ -34,10 +42,13 @@ class SearchFilterParams
     public function toArray(): array
     {
         return array_filter([
-            'hotel_id'     => $this->hotelId,
-            'adults_count' => $this->adults,
-            'city_code'    => $this->cityId,
-            'country_code' => $this->regionId,
+            'hotel_id'       => $this->hotelId,
+            'adults'         => $this->adults,
+            'childrens'      => $this->childrens,
+            'main_region_id' => $this->cityId,
+            'region_id'      => $this->regionId,
+            'from'           => $this->from,
+            'to'             => $this->to,
         ], function ($value) {
             return !is_null($value) && $value !== '';
         });

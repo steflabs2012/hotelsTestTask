@@ -53,10 +53,19 @@
                 </div>
 
                 <!-- Поле выбора количества взрослых -->
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <label for="adults" class="form-label">Взрослых</label>
                     <select id="adults" name="adults" class="form-select">
                         @for($i = 1; $i <= 10; $i++)
+                            <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+                <!-- Поле выбора количества детей -->
+                <div class="col-md-1">
+                    <label for="childrens" class="form-label">Детей</label>
+                    <select id="childrens" name="childrens" class="form-select">
+                        @for($i = 0; $i <= 4; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
                     </select>
@@ -79,11 +88,12 @@
                 <th>Тип комнаты</th>
                 <th>Типы обслуживания</th>
                 <th>Макс. взрослых</th>
+                <th>Цены</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td colspan="6" class="text-center">Результатов пока нет</td>
+                <td colspan="7" class="text-center">Результатов пока нет</td>
             </tr>
             </tbody>
         </table>
@@ -103,6 +113,7 @@
                 from: $('#from').val(),
                 to: $('#to').val(),
                 adults: $('#adults').val(),
+                childrens: $('#childrens').val(),
                 region_id: $('#region').val(),
                 main_region_id: $('#main_region').val(),
             };
@@ -117,7 +128,7 @@
                     tableBody.empty();
 
                     if (response.length === 0) {
-                        tableBody.append('<tr><td colspan="6" class="text-center">Нет доступных комнат</td></tr>');
+                        tableBody.append('<tr><td colspan="7" class="text-center">Нет доступных комнат</td></tr>');
                     } else {
                         response.forEach(function (room) {
                             tableBody.append(`
@@ -128,6 +139,7 @@
                                 <td>${room.room_type_id} - ${room.room_type_name} ${room.room_type_code}</td>
                                 <td>${room.boards}</td>
                                 <td>${room.min_adults} - ${room.max_adults}</td>
+                                <td>${room.prices_html}</td>
                             </tr>
                         `);
                         });

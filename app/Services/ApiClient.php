@@ -19,6 +19,10 @@ class ApiClient
     protected string $subRegionEndpoint      = 'api/Integratiion/GetSubRegions';
     protected string $reservationsEndpoint   = 'api/Integratiion/GetReservations';
     protected string $roomTypesEndpoint      = 'api/Integratiion/GetRoomTypeList';
+    protected string $currencyListEndpoint      = 'api/Integratiion/GetCurrencyList';
+    protected string $priceSearchEndpoint      = 'api/Integratiion/HotelPriceSearch';
+    protected string $getContractListsEndpoint      = 'api/Integratiion/GetContractList';
+    protected string $getPacketsEndpoint      = 'api/Integratiion/GetPackets';
 
     /**
      * @return int
@@ -90,13 +94,6 @@ class ApiClient
         return $this->sendRequest($this->hotelsEndpoint, ['operatorId' => $this->operatorId, 'isActive' => 'true']);
     }
 
-    /**
-     * @return array
-     */
-    public function getActiveHotelsMok(): array
-    {
-        return json_decode($this->jsonHotels, true);
-    }
 
     /**
      * @return array
@@ -152,6 +149,26 @@ class ApiClient
     public function getReservations(ReservationParams $params): array
     {
         return $this->sendRequest($this->reservationsEndpoint, [], $params->toArray());
+    }
+
+    public function getCurrencyList(): array
+    {
+        return $this->sendRequest($this->currencyListEndpoint, [], []);
+    }
+
+    public function priceSearch(array $params): array
+    {
+        return $this->sendRequest($this->priceSearchEndpoint, [], $params);
+    }
+
+    public function getContracts(array $params): array
+    {
+        return $this->sendRequest($this->getContractListsEndpoint, [], $params);
+    }
+
+    public function getPackets(array $params): array
+    {
+        return $this->sendRequest($this->getContractListsEndpoint, [], $params);
     }
 
     /**

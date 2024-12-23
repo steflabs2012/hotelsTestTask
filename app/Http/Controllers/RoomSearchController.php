@@ -10,6 +10,7 @@ use App\Models\Region;
 use App\Models\RegionsMain;
 use App\Models\Room;
 use App\Services\RoomAvailabilityService;
+use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -35,32 +36,34 @@ class RoomSearchController extends Controller
      * @param RoomAvailabilityService $roomAvailabilityService
      *
      * @return JsonResponse
+     * @throws Exception
      */
     public function search(SearchRequest $request, RoomAvailabilityService $roomAvailabilityService): JsonResponse
     {
         $validated = $request->validated();
 
-        $from = $validated['from'];
-        $to = $validated['to'];
-        $hotelId = $validated['hotel_id'];
-
         $filterParams = new SearchFilterParams([
-            'hotel_id'       => $request->input('hotel_id') ?? null,
-            'adults'         => $request->input('adults') ?? 1,
-            'region_id'      => $request->input('region_id') ?? null,
-            'main_region_id' => $request->input('main_region_id') ?? null,
+            'hotel_id'       => $validated['hotel_id'] ?? null,
+            'adults'         => $validated['adults'] ?? 1,
+            'childrens'      => $validated['childrens'] ?? 0,
+            'region_id'      => $request->input('region_id'),
+            'main_region_id' => $request->input('main_region_id'),
+            'from'           => $validated['from'],
+            'to'             => $validated['to'],
         ]);
 
-        try {
-            $rooms = Room::getByFilterParams($filterParams, ['hotel', 'hotel.region', 'hotel.regionsMain', 'roomType', 'boards']);
-            $avalableRooms = $roomAvailabilityService->filterAvailableRooms($rooms, $from, $to, $hotelId);
-        } catch (Throwable $e) {
-            return response()->json(['error' => 'Internal Server Error'], 500);
-        }
+        $avalableRooms = $roomAvailabilityService->getSearchData($filterParams);
 
         $roomsData = collect();
 
         foreach ($avalableRooms as $room) {
+
+            $pricesHtml = view('partials.room.price', [
+                'preparedPeriods' => $room->preparedPeriods,
+                'adults'          => $filterParams->adults,
+                'childrens'       => $filterParams->childrens,
+            ])->render();
+
             $roomsData->push([
                 'hotel_id'       => $room->hotel->id,
                 'hotel_name'     => $room->hotel->formatted_name,
@@ -72,9 +75,10 @@ class RoomSearchController extends Controller
                 'room_type_id'   => $room->roomType->id,
                 'room_type_name' => $room->roomType->formatted_name,
                 'room_type_code' => $room->roomType->code,
-                'min_adults'     => $room->roomType->min_paid_adult ?? null,
-                'max_adults'     => $room->roomType->max_adult ?? null,
+                'min_adults'     => $room->min_paid_adult ?? null,
+                'max_adults'     => $room->max_adult ?? null,
                 'boards'         => implode(', ', $room->boards->pluck('formatted_name')->toArray()),
+                'prices_html'    => $pricesHtml,
             ]);
         }
 

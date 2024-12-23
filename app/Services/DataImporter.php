@@ -87,7 +87,8 @@ class DataImporter
     {
         $this->apiClient->login();
 
-        $hotelIds = Hotel::pluck('id')->toArray();
+//        $hotelIds = Hotel::pluck('id')->toArray();
+        $hotelIds = Hotel::where('id', '>', 1745)->pluck('id')->toArray();
 
         foreach ($hotelIds as $hotelId) {
 
@@ -113,22 +114,24 @@ class DataImporter
             $currency = $this->getCurrencyCode($contract['CurrencyId']);
             $boardId = $contract['Boards'][0] ?? null;
 
-            foreach ($contract['Accommodations'] as $accommodation) {
-                PricingPeriod::query()->firstOrCreate(
-                    [
-                        'hotel_id'     => $contract['HotelId'],
-                        'room_type_id' => $accommodation['RoomTypeId'],
-                        'board_id'     => $boardId,
-                        'from'         => Carbon::parse($accommodation['PeriodBegin'])->toDateString(),
-                        'to'           => Carbon::parse($accommodation['PeriodEnd'])->toDateString(),
-                        'adults'       => $accommodation['Adult'],
-                        'children'     => $accommodation['Child'],
-                    ],
-                    [
-                        'price'    => $accommodation['Price'],
-                        'currency' => $currency,
-                    ]
-                );
+            if(isset($contract['Accommodations'])){
+                foreach ($contract['Accommodations'] as $accommodation) {
+                    PricingPeriod::query()->firstOrCreate(
+                        [
+                            'hotel_id'     => $contract['HotelId'],
+                            'room_type_id' => $accommodation['RoomTypeId'],
+                            'board_id'     => $boardId,
+                            'from'         => Carbon::parse($accommodation['PeriodBegin'])->toDateString(),
+                            'to'           => Carbon::parse($accommodation['PeriodEnd'])->toDateString(),
+                            'adults'       => $accommodation['Adult'],
+                            'children'     => $accommodation['Child'],
+                        ],
+                        [
+                            'price'    => $accommodation['Price'],
+                            'currency' => $currency,
+                        ]
+                    );
+                }
             }
         }
     }
